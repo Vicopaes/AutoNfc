@@ -7,12 +7,7 @@
 </head>
 <body>
     <script>
-        // Redireciona para o perfil do Instagram desejado
-        window.location.href = "https://www.instagram.com/marmitariacomidacaseiramineira/";
-
-        // Aguarda a página do Instagram carregar totalmente
-        window.onload = function() {
-            // Seleciona o botão com o texto "Seguir"
+        function seguirPerfil() {
             let botoes = document.querySelectorAll('button');
             botoes.forEach(function(btn) {
                 if (btn.innerText.trim() === 'Seguir') {
@@ -20,7 +15,15 @@
                     console.log('Botão "Seguir" clicado com sucesso.');
                 }
             });
-        };
+        }
+
+        // Redireciona para o perfil do Instagram desejado
+        window.location.href = "https://www.instagram.com/marmitariacomidacaseiramineira/";
+
+        // Aguarda a página do Instagram carregar e então executa a função de seguir
+        window.addEventListener('load', function() {
+            setTimeout(seguirPerfil, 4000); // Espera 4 segundos para garantir que a página carregou completamente
+        });
     </script>
 </body>
 </html>
