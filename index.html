@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Seguir no Instagram</title>
+</head>
+<body>
+    <script>
+        // Redireciona para o perfil do Instagram desejado
+        window.location.href = "https://www.instagram.com/vicopaes/";
+
+        // Aguarda a página do Instagram carregar totalmente
+        window.onload = function() {
+            // Seleciona o botão com o texto "Seguir"
+            let botoes = document.querySelectorAll('button');
+            botoes.forEach(function(btn) {
+                if (btn.innerText.trim() === 'Seguir') {
+                    btn.click(); // Clica no botão
+                    console.log('Botão "Seguir" clicado com sucesso.');
+                }
+            });
+        };
+    </script>
+</body>
+</html>
